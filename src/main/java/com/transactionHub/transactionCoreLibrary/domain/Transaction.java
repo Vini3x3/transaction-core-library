@@ -15,11 +15,10 @@ public class Transaction {
     private BigDecimal withdrawal;
     private BigDecimal deposit;
     private BigDecimal balance;
-    private Boolean virtual;
     private Set<String> tags;
     private Map<String, String> meta;
 
-    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Boolean virtual, Set<String> tags, Map<String, String> meta) {
+    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Set<String> tags, Map<String, String> meta) {
         this.date = date;
         this.offset = offset;
         this.account = account;
@@ -27,13 +26,12 @@ public class Transaction {
         this.withdrawal = withdrawal;
         this.deposit = deposit;
         this.balance = balance;
-        this.virtual = virtual;
         this.tags = tags;
         this.meta = meta;
     }
 
-    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Boolean virtual) {
-        this(date, offset, account, description, withdrawal, deposit, balance, virtual, Set.of(), Map.of());
+    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance) {
+        this(date, offset, account, description, withdrawal, deposit, balance, Set.of(), Map.of());
     }
 
     public Transaction() {
@@ -93,14 +91,6 @@ public class Transaction {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-    }
-
-    public Boolean getVirtual() {
-        return virtual;
-    }
-
-    public void setVirtual(Boolean virtual) {
-        this.virtual = virtual;
     }
 
     public Set<String> getTags() {
