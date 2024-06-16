@@ -5,5 +5,5 @@ public class TransactionMeta {
     public static String IMPORT_FILENAME = "import filename";
     public static String IMPORT_LINE_NO = "import line no";
     public static String IMPORT_TIMESTAMP = "import timestamp";
-    public static String ATTACHED_FILES = "attached files";
+    public static String REMARKS = "remarks";
 }
