@@ -2,10 +2,11 @@ package com.transactionHub.transactionCoreLibrary.constant;
 
 public enum AccountEnum {
 
-    FORMAL(1),
-    BRANCH(2),
+    HSBC(1),
+    HSBC_SAVE(2),
     CITI(3),
-    BOC(4);
+    BOC(4),
+    BOC_CHINA(5);
 
     private final int id;
 
