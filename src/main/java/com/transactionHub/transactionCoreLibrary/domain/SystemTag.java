@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class SystemTag extends Tag {
 
     private String category;
-    private String subTag;
+    private String offset;
     public static final String[] CATEGORY = new String[] {
             TagType.INVEST,
             TagType.SCHEDULE,
@@ -31,7 +31,7 @@ public class SystemTag extends Tag {
             throw new IllegalArgumentException("invalid tag format: invalid category");
         }
         this.category = tagParts[1];
-        this.subTag = tagParts[2];
+        this.offset = tagParts[2];
     }
 
     public String getCategory() {
@@ -42,11 +42,11 @@ public class SystemTag extends Tag {
         this.category = category;
     }
 
-    public String getSubTag() {
-        return subTag;
+    public String getOffset() {
+        return offset;
     }
 
-    public void setSubTag(String subTag) {
-        this.subTag = subTag;
+    public void setOffset(String offset) {
+        this.offset = offset;
     }
 }
