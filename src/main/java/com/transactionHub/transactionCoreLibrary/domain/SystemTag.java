@@ -9,7 +9,7 @@ public class SystemTag extends Tag {
 
     private String category;
     private String offset;
-    public static final String[] CATEGORY = new String[] {
+    public static final String[] SYSTEM_TAG_TYPE = new String[] {
             TagType.INVEST,
             TagType.SCHEDULE,
             TagType.WALLET
@@ -27,7 +27,7 @@ public class SystemTag extends Tag {
         if (!tagParts[0].equals(TagConstant.SYS)) {
             throw new IllegalArgumentException("invalid tag format: not system tag");
         }
-        if (Arrays.stream(CATEGORY).noneMatch(o -> o.equals(tagParts[1]))) {
+        if (Arrays.stream(SYSTEM_TAG_TYPE).noneMatch(o -> o.equals(tagParts[1]))) {
             throw new IllegalArgumentException("invalid tag format: invalid category");
         }
         this.category = tagParts[1];
