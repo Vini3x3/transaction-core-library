@@ -1,5 +1,6 @@
 package com.transactionHub.transactionCoreLibrary.domain;
 
+import com.transactionHub.transactionCoreLibrary.constant.TagConstant;
 import com.transactionHub.transactionCoreLibrary.constant.TagType;
 
 import java.util.Arrays;
@@ -23,7 +24,7 @@ public class SystemTag extends Tag {
         if (tagParts.length != 3) {
             throw new IllegalArgumentException("invalid tag format: not composed of 3 parts");
         }
-        if (!tagParts[0].equals(TagType.SYS)) {
+        if (!tagParts[0].equals(TagConstant.SYS)) {
             throw new IllegalArgumentException("invalid tag format: not system tag");
         }
         if (Arrays.stream(CATEGORY).noneMatch(o -> o.equals(tagParts[1]))) {

@@ -1,5 +1,6 @@
 package com.transactionHub.transactionCoreLibrary.domain;
 
+import com.transactionHub.transactionCoreLibrary.constant.TagConstant;
 import com.transactionHub.transactionCoreLibrary.constant.TagType;
 
 public class Tag {
@@ -25,10 +26,6 @@ public class Tag {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public boolean isSys() {
-        return this.description.startsWith(TagType.SYS + ":");
     }
 
 

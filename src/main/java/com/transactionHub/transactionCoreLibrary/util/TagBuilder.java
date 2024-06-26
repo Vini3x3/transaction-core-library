@@ -1,5 +1,6 @@
 package com.transactionHub.transactionCoreLibrary.util;
 
+import com.transactionHub.transactionCoreLibrary.constant.TagConstant;
 import com.transactionHub.transactionCoreLibrary.constant.TagType;
 
 public class TagBuilder {
@@ -57,7 +58,7 @@ public class TagBuilder {
 
         StringBuffer sb = new StringBuffer();
         if (isSys) {
-            sb.append(TagType.SYS);
+            sb.append(TagConstant.SYS);
             sb.append(":");
         }
         if (isSchedule) {
