@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 
-public class Transaction {
+public class Transaction implements Comparable<Transaction> {
     private Date date;
     private Integer offset;
     private AccountEnum account;
@@ -107,6 +107,18 @@ public class Transaction {
 
     public void setMeta(Map<String, String> meta) {
         this.meta = meta;
+    }
+
+
+    @Override
+    public int compareTo(Transaction o) {
+        if (this.date.compareTo(o.date) != 0) {
+            return this.date.compareTo(o.date);
+        }
+        if ((int) this.offset != o.offset) {
+            return Integer.compare(this.offset, o.offset);
+        }
+        return this.account.compareTo(o.account);
     }
 }
 
