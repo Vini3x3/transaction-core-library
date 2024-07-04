@@ -4,6 +4,7 @@ import com.transactionHub.transactionCoreLibrary.constant.AccountEnum;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,8 +18,9 @@ public class Transaction implements Comparable<Transaction> {
     private BigDecimal balance;
     private Set<String> tags;
     private Map<String, String> meta;
+    private List<FileInfo> attachments;
 
-    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Set<String> tags, Map<String, String> meta) {
+    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Set<String> tags, Map<String, String> meta, List<FileInfo> attachments) {
         this.date = date;
         this.offset = offset;
         this.account = account;
@@ -28,10 +30,11 @@ public class Transaction implements Comparable<Transaction> {
         this.balance = balance;
         this.tags = tags;
         this.meta = meta;
+        this.attachments = attachments;
     }
 
     public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance) {
-        this(date, offset, account, description, withdrawal, deposit, balance, Set.of(), Map.of());
+        this(date, offset, account, description, withdrawal, deposit, balance, Set.of(), Map.of(), List.of());
     }
 
     public Transaction() {
@@ -109,6 +112,13 @@ public class Transaction implements Comparable<Transaction> {
         this.meta = meta;
     }
 
+    public List<FileInfo> getAttachments() {
+        return attachments;
+    }
+
+    public void setAttachments(List<FileInfo> attachments) {
+        this.attachments = attachments;
+    }
 
     @Override
     public int compareTo(Transaction o) {
