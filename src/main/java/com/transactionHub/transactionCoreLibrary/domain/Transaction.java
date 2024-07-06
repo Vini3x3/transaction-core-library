@@ -1,6 +1,7 @@
 package com.transactionHub.transactionCoreLibrary.domain;
 
 import com.transactionHub.transactionCoreLibrary.constant.AccountEnum;
+import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class Transaction implements Comparable<Transaction> {
-    private Date date;
+    private DateTime date;
     private Integer offset;
     private AccountEnum account;
     private String description;
@@ -18,7 +19,7 @@ public class Transaction implements Comparable<Transaction> {
     private Set<String> tags;
     private Map<String, String> meta;
 
-    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Set<String> tags, Map<String, String> meta) {
+    public Transaction(DateTime date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance, Set<String> tags, Map<String, String> meta) {
         this.date = date;
         this.offset = offset;
         this.account = account;
@@ -30,18 +31,18 @@ public class Transaction implements Comparable<Transaction> {
         this.meta = meta;
     }
 
-    public Transaction(Date date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance) {
+    public Transaction(DateTime date, Integer offset, AccountEnum account, String description, BigDecimal withdrawal, BigDecimal deposit, BigDecimal balance) {
         this(date, offset, account, description, withdrawal, deposit, balance, Set.of(), Map.of());
     }
 
     public Transaction() {
     }
 
-    public Date getDate() {
+    public DateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(DateTime date) {
         this.date = date;
     }
 
