@@ -1,11 +1,11 @@
 package com.transactionHub.transactionCoreLibrary.domain;
 
-import com.transactionHub.transactionCoreLibrary.constant.TagConstant;
-import com.transactionHub.transactionCoreLibrary.constant.TagType;
-
 public class Tag {
     private String name;
     private String description;
+
+    public Tag() {
+    }
 
     public Tag(String name, String description) {
         this.name = name;
